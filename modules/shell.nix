@@ -39,6 +39,11 @@
     #'';
   };
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
