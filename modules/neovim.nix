@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-
-{
-  xdg.configFile."nvim".source = ./nvim;
-
+{ config, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -14,12 +10,13 @@
     withRuby = false;
 
     extraPackages = with pkgs; [
-      tree-sitter
       gcc
+      tree-sitter
       ripgrep
       fd
       fzf
       xclip
+      lazygit
 
       lua5_1
       luarocks
@@ -29,4 +26,6 @@
       lua-language-server
     ];
   };
+
+  xdg.configFile."nvim".source = ./neovim-config;
 }

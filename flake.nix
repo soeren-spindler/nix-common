@@ -1,11 +1,12 @@
 {
-  description = "My Home Manager modules";
+  description = "Shared agnostic Home Manager modules";
 
   outputs = { self, ... }: {
     homeManagerModules = {
-      zsh = import ./modules/zsh.nix;
-      git = import ./modules/git.nix;
-      neovim = import ./modules/neovim.nix;
+      core = ./modules/core.nix;
+      shell = ./modules/shell.nix;
+      git = ./modules/git.nix;
+      neovim = ./modules/neovim.nix;
     };
   };
 }

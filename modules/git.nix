@@ -1,11 +1,20 @@
-{ gitName, gitEmail, ... }:
-
-{
+{ config, pkgs, ... }: {
   programs.git = {
     enable = true;
-    settings.user.name = gitName;
-    settings.user.email = gitEmail;
-  
-    settings.init.defaultBranch = "main";
+
+    settings = {
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+
+      alias = {
+        st = "status";
+        df = "diff";
+        lg = "log --graph --abbrev-commit --decorate --all";
+      };
+    };
+
+    ignores = [
+      ".direnv/"
+    ];
   };
 }
