@@ -34,6 +34,11 @@
       }
     '';
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "sudo" ];
+    };
+
     #initContent = ''
     #  export EDITOR=nvim
     #'';
